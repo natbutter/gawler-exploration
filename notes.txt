@@ -1,0 +1,210 @@
+-----
+Steps for downsampling original data and converting to consistent formats for model
+-----
+
+------
+RAW raster dataset file names
+------
+DATA/RAW/zips/GDP00003/Grids/Basement_Elevation_grid.ers
+DATA/RAW/zips/GDP00003/Grids/Cover_Thickness_grid.ers
+DATA/RAW/zips/GDP00003/Grids/SA_DH_DTB.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_AlOH_group_composition.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_AlOH_group_content.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_FeOH_group_content.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Ferric_oxide_composition.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Ferric_oxide_content.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Ferrous_iron_content_in_MgOH.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Ferrous_iron_index.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Green_vegetation.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Kaolin_group_index.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_MgOH_group_composition.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_MgOH_group_content.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Opaque_index.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Regolith_B3_div_B7.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Regolith_B4_div_B7.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_L2EM_ASTER_Quartz_index.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_L2EM_ASTER_Silica_index.ers
+DATA/RAW/zips/SA_RAD_DOSE_ERS/SA_RAD_DOSE.ers  
+DATA/RAW/zips/SA_RAD_U_ERS/SA_RAD_U.ers
+DATA/RAW/zips/SA_RAD_K_ERS/SA_RAD_K.ers        
+DATA/RAW/zips/SA_TMI_ERS/SA_TMI.ers
+DATA/RAW/zips/SA_RAD_KthU_ERS/SA_RAD_KThU.ers  
+DATA/RAW/zips/SA_TMI_LP800_VRTP_2VD_ERS/SA_TMI_LP800_VRTP_2VD.ers
+DATA/RAW/zips/SA_RAD_TH_ERS/SA_RAD_TH.ers      
+DATA/RAW/zips/SA_TMI_VRTP_ERS/SA_TMI_VRTP.ers
+DATA/RAW/zips/Data_9secDEM_D8/dem-9s.asc
+DATA/RAW/zips/SA_GRAV_TIF/SA_GRAV.tif
+DATA/RAW/zips/GDP00003/Grids/Basement_Elevation_grid.ers
+DATA/RAW/zips/GDP00003/Grids/Cover_Thickness_grid.ers
+DATA/RAW/zips/GDP00003/Grids/SA_DH_DTB.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_AlOH_group_composition.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_AlOH_group_content.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_FeOH_group_content.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Ferric_oxide_composition.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Ferric_oxide_content.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Ferrous_iron_content_in_MgOH.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Ferrous_iron_index.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Green_vegetation.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Kaolin_group_index.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_MgOH_group_composition.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_MgOH_group_content.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Opaque_index.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Regolith_B3_div_B7.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Regolith_B4_div_B7.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_L2EM_ASTER_Quartz_index.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_L2EM_ASTER_Silica_index.ers
+DATA/RAW/zips/SA_RAD_DOSE_ERS/SA_RAD_DOSE.ers  
+DATA/RAW/zips/SA_RAD_U_ERS/SA_RAD_U.ers
+DATA/RAW/zips/SA_RAD_K_ERS/SA_RAD_K.ers        
+DATA/RAW/zips/SA_TMI_ERS/SA_TMI.ers
+DATA/RAW/zips/SA_RAD_KthU_ERS/SA_RAD_KThU.ers  
+DATA/RAW/zips/SA_TMI_LP800_VRTP_2VD_ERS/SA_TMI_LP800_VRTP_2VD.ers
+DATA/RAW/zips/SA_RAD_TH_ERS/SA_RAD_TH.ers      
+DATA/RAW/zips/SA_TMI_VRTP_ERS/SA_TMI_VRTP.ers
+
+------
+convert and crop using gdal 
+------
+
+gdal_rasterize -l "100K Surface Geology" -a GLCODE -tr 0.0025 0.0025 -a_nodata -9999.0 -te 131.00000854200005 -32.66498665099999 138.00001063499997 -27.349986170000022 -ot Float32 -of GTiff "C:\\PYG\\UNEARTHED\\DATA\\RAW\\zips\\100K_Surface_Geology_shp\\100K Surface Geology_shp\\100K Surface Geology.shp" C:/PYG/UNEARTHED/DATA/RAW/raster-geol.tif
+
+gdalwarp -t_srs EPSG:4326 -of GTiff -tr 0.0025 0.0025 -tap -cutline C:\PYG\UNEARTHED\DATA\RAW\zips\Unearthed_5_GCAS_Boundary\GCAS_Boundary.shp -cl GCAS_Boundary -crop_to_cutline -dstnodata -9999.0 C:\PYG\UNEARTHED\DATA\RAW\zips\Unearthed_1_VNIR_SWIR_Geoscience_Products\BSQ\SA_L2EM_ASTER_Silica_index.ers C:/PYG/UNEARTHED/DATA/RAW/clip-aster-silica.tif
+
+
+for i in *.tif; do echo $i; gdal_translate -of netCDF $i ${i/.tif/}.nc; done
+
+gdal_translate -tr 0.01 0.01 -a_srs EPSG:4326 -a_ullr 127.35 -39.77 142.65 -25.21 -a_nodata 0.0 -of netCDF ../RAW/zips/GDP00003/Grids/Basement_Elevation_grid.ers sa-basement.nc
+gdal_translate -of netCDF -tr 0.01 0.01 ../RAW/zips/GDP00003/Grids/Basement_Elevation_grid.ers sa-basement.nc
+gdalwarp -of netCDF -tr 0.01 0.01 ../RAW/zips/GDP00003/Grids/Basement_Elevation_grid.ers sa-basement.nc
+gdalwarp -of GTiff  -cutline /workspace/DATA/RAW/zips/Unearthed_5_GCAS_Boundary/GCAS_Boundary.shp -cl GCAS_Boundary -crop_to_cutline -dstnodata -9999.0 /workspace/DATA/RAW/zips/GDP00003/Grids/Basement_Elevation_grid.ers /workspace/DATA/RAW/clip-basement.tif
+gdalwarp -of GTiff  -cutline /workspace/DATA/RAW/zips/Unearthed_5_GCAS_Boundary/GCAS_Boundary.shp -cl GCAS_Boundary -crop_to_cutline -dstnodata -9999.0 /workspace/DATA/RAW/zips/GDP00003/Grids/Cover_Thickness_grid.ers /workspace/DATA/RAW/clip-cover.tif
+gdalwarp -of GTiff  -cutline /workspace/DATA/RAW/zips/Unearthed_5_GCAS_Boundary/GCAS_Boundary.shp -cl GCAS_Boundary -crop_to_cutline -dstnodata -9999.0 /workspace/DATA/RAW/zips/GDP00003/Grids/SA_DH_DTB.ers /workspace/DATA/RAW/clip-dtb.tif
+gdalwarp -of GTiff  -cutline /workspace/DATA/RAW/zips/Unearthed_5_GCAS_Boundary/GCAS_Boundary.shp -cl GCAS_Boundary -crop_to_cutline -dstnodata -9999.0 /workspace/DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_AlOH_group_composition.ers /workspace/DATA/RAW/clip-aster-AlOH-comp.tif
+gdalwarp -of GTiff  -cutline /workspace/DATA/RAW/zips/Unearthed_5_GCAS_Boundary/GCAS_Boundary.shp -cl GCAS_Boundary -crop_to_cutline -dstnodata -9999.0 /workspace/DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_AlOH_group_content.ers /workspace/DATA/RAW/clip-aster-AlOH-cont.tif
+gdalwarp -of GTiff  -cutline /workspace/DATA/RAW/zips/Unearthed_5_GCAS_Boundary/GCAS_Boundary.shp -cl GCAS_Boundary -crop_to_cutline -dstnodata -9999.0 /workspace/DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_FeOH_group_content.ers /workspace/DATA/RAW/clip-aster-FeOH-cont.tif
+gdalwarp -of GTiff  -cutline /workspace/DATA/RAW/zips/Unearthed_5_GCAS_Boundary/GCAS_Boundary.shp -cl GCAS_Boundary -crop_to_cutline -dstnodata -9999.0 /workspace/DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Ferric_oxide_composition.ers /workspace/DATA/RAW/clip-aster-Ferric-comp.tif
+gdalwarp -of GTiff  -cutline /workspace/DATA/RAW/zips/Unearthed_5_GCAS_Boundary/GCAS_Boundary.shp -cl GCAS_Boundary -crop_to_cutline -dstnodata -9999.0 /workspace/DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Ferric_oxide_content.ers /workspace/DATA/RAW/clip-aster-Ferric-cont.tif
+gdalwarp -of GTiff  -cutline /workspace/DATA/RAW/zips/Unearthed_5_GCAS_Boundary/GCAS_Boundary.shp -cl GCAS_Boundary -crop_to_cutline -dstnodata -9999.0 /workspace/DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Ferrous_iron_content_in_MgOH.ers /workspace/DATA/RAW/clip-aster-Fe-cont.tif
+gdalwarp -of GTiff  -cutline /workspace/DATA/RAW/zips/Unearthed_5_GCAS_Boundary/GCAS_Boundary.shp -cl GCAS_Boundary -crop_to_cutline -dstnodata -9999.0 /workspace/DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Ferrous_iron_index.ers /workspace/DATA/RAW/clip-aster-Fe-index.tif
+gdalwarp -of GTiff  -cutline /workspace/DATA/RAW/zips/Unearthed_5_GCAS_Boundary/GCAS_Boundary.shp -cl GCAS_Boundary -crop_to_cutline -dstnodata -9999.0 /workspace/DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Green_vegetation.ers /workspace/DATA/RAW/clip-aster-Green.tif
+gdalwarp -of GTiff  -cutline /workspace/DATA/RAW/zips/Unearthed_5_GCAS_Boundary/GCAS_Boundary.shp -cl GCAS_Boundary -crop_to_cutline -dstnodata -9999.0 /workspace/DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Kaolin_group_index.ers /workspace/DATA/RAW/clip-aster-Kaolin.tif
+gdalwarp -of GTiff  -cutline /workspace/DATA/RAW/zips/Unearthed_5_GCAS_Boundary/GCAS_Boundary.shp -cl GCAS_Boundary -crop_to_cutline -dstnodata -9999.0 /workspace/DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_MgOH_group_composition.ers /workspace/DATA/RAW/clip-aster-MgOH-comp.tif
+gdalwarp -of GTiff  -cutline /workspace/DATA/RAW/zips/Unearthed_5_GCAS_Boundary/GCAS_Boundary.shp -cl GCAS_Boundary -crop_to_cutline -dstnodata -9999.0 /workspace/DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_MgOH_group_content.ers /workspace/DATA/RAW/clip-aster-MgOH-cont.tif
+gdalwarp -of GTiff  -cutline /workspace/DATA/RAW/zips/Unearthed_5_GCAS_Boundary/GCAS_Boundary.shp -cl GCAS_Boundary -crop_to_cutline -dstnodata -9999.0 /workspace/DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Opaque_index.ers /workspace/DATA/RAW/clip-aster-Opaque.tif
+gdalwarp -of GTiff  -cutline /workspace/DATA/RAW/zips/Unearthed_5_GCAS_Boundary/GCAS_Boundary.shp -cl GCAS_Boundary -crop_to_cutline -dstnodata -9999.0 /workspace/DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Regolith_B3_div_B7.ers /workspace/DATA/RAW/clip-aster-B3.tif
+gdalwarp -of GTiff  -cutline /workspace/DATA/RAW/zips/Unearthed_5_GCAS_Boundary/GCAS_Boundary.shp -cl GCAS_Boundary -crop_to_cutline -dstnodata -9999.0 /workspace/DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Regolith_B4_div_B7.ers /workspace/DATA/RAW/clip-aster-B4.tif
+gdalwarp -of GTiff  -cutline /workspace/DATA/RAW/zips/Unearthed_5_GCAS_Boundary/GCAS_Boundary.shp -cl GCAS_Boundary -crop_to_cutline -dstnodata -9999.0 /workspace/DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_L2EM_ASTER_Quartz_index.ers /workspace/DATA/RAW/clip-aster-Quartz.tif
+gdalwarp -of GTiff  -cutline /workspace/DATA/RAW/zips/Unearthed_5_GCAS_Boundary/GCAS_Boundary.shp -cl GCAS_Boundary -crop_to_cutline -dstnodata -9999.0 /workspace/DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_L2EM_ASTER_Silica_index.ers /workspace/DATA/RAW/clip-aster-Silica.tif
+
+
+
+C:\PYG\UNEARTHED\DATA\sa\sa-basement.tif
+0.00100
+
+
+x1,y1,z1 = readnc("../DATA/sa/sa-aster-AlOH-cont.nc")
+x2,y2,z2 = readnc("../DATA/sa/sa-aster-AlOH.nc")
+x3,y3,z3 = readnc("../DATA/sa/sa-aster-FeOH-cont.nc")
+x4,y4,z4 = readnc("../DATA/sa/sa-aster-Ferric-cont.nc")
+x5,y5,z5 = readnc("../DATA/sa/sa-aster-Ferrous-cont.nc")
+x6,y6,z6 = readnc("../DATA/sa/sa-aster-Ferrous-index.nc")
+x7,x7,z7 = readnc("../DATA/sa/sa-aster-MgOH-comp.nc")
+x8,y8,z8 = readnc("../DATA/sa/sa-aster-MgOH-cont.nc")
+x9,y9,z9 = readnc("../DATA/sa/sa-aster-green.nc")
+x10,y10,z10 = readnc("../DATA/sa/sa-aster-kaolin.nc")
+x11,y11,z11 = readnc("../DATA/sa/sa-aster-opaque.nc")
+x12,y12,z12 = readnc("../DATA/sa/sa-aster-quartz.nc")
+x13,y13,z13 = readnc("../DATA/sa/sa-aster-regolith-b3.nc")
+x14,y14,z14 = readnc("../DATA/sa/sa-aster-regolith-b4.nc")
+x15,y15,z15 = readnc("../DATA/sa/sa-aster-silica.nc")
+x16,y16,z16 = readnc("../DATA/sa/sa-basement.nc")
+x17,y17,z17 = readnc("../DATA/sa/sa-dem.nc")
+x18,y18,z18 = readnc("../DATA/sa/sa-dtb.nc")
+x19,y19,z19 = readnc("../DATA/sa/sa-mag-2vd.nc")
+x20,y20,z20 = readnc("../DATA/sa/sa-mag-rtp.nc")
+x21,y21,z21 = readnc("../DATA/sa/sa-mag-tmi.nc")
+x22,y22,z22 = readnc("../DATA/sa/sa-rad-dose.nc")
+x23,y23,z23 = readnc("../DATA/sa/sa-rad-k.nc")
+x24,y24,z24 = readnc("../DATA/sa/sa-rad-th.nc")
+x25,y25,z25 = readnc("../DATA/sa/sa-rad-u.nc")
+x26,y26,z26 = readnc("../DATA/sa/sa-grav.nc")
+
+
+
+DATA/RAW/zips/GDP00003/Grids/Basement_Elevation_grid.ers
+DATA/RAW/zips/GDP00003/Grids/Cover_Thickness_grid.ers
+DATA/RAW/zips/GDP00003/Grids/SA_DH_DTB.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_AlOH_group_composition.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_AlOH_group_content.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_FeOH_group_content.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Ferric_oxide_composition.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Ferric_oxide_content.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Ferrous_iron_content_in_MgOH.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Ferrous_iron_index.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Green_vegetation.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Kaolin_group_index.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_MgOH_group_composition.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_MgOH_group_content.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Opaque_index.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Regolith_B3_div_B7.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Regolith_B4_div_B7.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_L2EM_ASTER_Quartz_index.ers
+DATA/RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_L2EM_ASTER_Silica_index.ers
+DATA/RAW/zips/SA_RAD_DOSE_ERS/SA_RAD_DOSE.ers  
+DATA/RAW/zips/SA_RAD_U_ERS/SA_RAD_U.ers
+DATA/RAW/zips/SA_RAD_K_ERS/SA_RAD_K.ers        
+DATA/RAW/zips/SA_TMI_ERS/SA_TMI.ers
+DATA/RAW/zips/SA_RAD_KthU_ERS/SA_RAD_KThU.ers  
+DATA/RAW/zips/SA_TMI_LP800_VRTP_2VD_ERS/SA_TMI_LP800_VRTP_2VD.ers
+DATA/RAW/zips/SA_RAD_TH_ERS/SA_RAD_TH.ers      
+DATA/RAW/zips/SA_TMI_VRTP_ERS/SA_TMI_VRTP.ers
+DATA/RAW/zips/Data_9secDEM_D8/dem-9s.asc
+
+gdalwarp -t_srs EPSG:7844 -of netCDF -tr 0.01 0.01 -tap -cutline /workspace/DATA/RAW/zips/SA_STATE_POLYGON_shp.shp -cl SA_STATE_POLYGON_shp -crop_to_cutline -dstnodata 0.0 ../RAW/zips/Data_9secDEM_D8/dem-9s.asc sa-dem.nc
+
+gdalwarp -t_srs EPSG:7844 -of netCDF -tr 0.01 0.01 -tap -cutline /workspace/DATA/RAW/zips/SA_STATE_POLYGON_shp.shp -cl SA_STATE_POLYGON_shp -crop_to_cutline -dstnodata 0.0 ../RAW/zips/GDP00003/Grids/Basement_Elevation_grid.ers sa-base-elev.nc
+
+gdalwarp -t_srs EPSG:7844 -of netCDF -tr 0.01 0.01 -tap -cutline /workspace/DATA/RAW/zips/SA_STATE_POLYGON_shp.shp -cl SA_STATE_POLYGON_shp -crop_to_cutline -dstnodata 0.0 ../RAW/zips/GDP00003/Grids/Cover_Thickness_grid.ers sa-base-cover.nc
+
+gdalwarp -t_srs EPSG:7844 -of netCDF -tr 0.01 0.01 -tap -cutline /workspace/DATA/RAW/zips/SA_STATE_POLYGON_shp.shp -cl SA_STATE_POLYGON_shp -crop_to_cutline -dstnodata 0.0 ../RAW/zips/GDP00003/Grids/SA_DH_DTB.ers sa-base-dtb.nc
+
+gdalwarp -t_srs EPSG:7844 -of netCDF -tr 0.01 0.01 -tap -cutline /workspace/DATA/RAW/zips/SA_STATE_POLYGON_shp.shp -cl SA_STATE_POLYGON_shp -crop_to_cutline -dstnodata 0.0 ../RAW/zips/SA_RAD_DOSE_ERS/SA_RAD_DOSE.ers  sa-rad-dose.nc
+
+gdalwarp -t_srs EPSG:7844 -of netCDF -tr 0.01 0.01 -tap -cutline /workspace/DATA/RAW/zips/SA_STATE_POLYGON_shp.shp -cl SA_STATE_POLYGON_shp -crop_to_cutline -dstnodata 0.0 ../RAW/zips/SA_RAD_U_ERS/SA_RAD_U.ers sa-rad-u.nc
+
+gdalwarp -t_srs EPSG:7844 -of netCDF -tr 0.01 0.01 -tap -cutline /workspace/DATA/RAW/zips/SA_STATE_POLYGON_shp.shp -cl SA_STATE_POLYGON_shp -crop_to_cutline -dstnodata 0.0 ../RAW/zips/SA_RAD_TH_ERS/SA_RAD_TH.ers  sa-rad-th.nc
+
+gdalwarp -t_srs EPSG:7844 -of netCDF -tr 0.01 0.01 -tap -cutline /workspace/DATA/RAW/zips/SA_STATE_POLYGON_shp.shp -cl SA_STATE_POLYGON_shp -crop_to_cutline -dstnodata 0.0 ../RAW/zips/SA_RAD_K_ERS/SA_RAD_K.ers  sa-rad-k.nc
+
+gdalwarp -t_srs EPSG:7844 -of netCDF -tr 0.01 0.01 -tap -cutline /workspace/DATA/RAW/zips/SA_STATE_POLYGON_shp.shp -cl SA_STATE_POLYGON_shp -crop_to_cutline -dstnodata 0.0 ../RAW/zips/SA_TMI_ERS/SA_TMI.ers sa-mag-tmi.nc
+
+gdalwarp -t_srs EPSG:7844 -of netCDF -tr 0.01 0.01 -tap -cutline /workspace/DATA/RAW/zips/SA_STATE_POLYGON_shp.shp -cl SA_STATE_POLYGON_shp -crop_to_cutline -dstnodata 0.0 ../RAW/zips/SA_TMI_LP800_VRTP_2VD_ERS/SA_TMI_LP800_VRTP_2VD.ers sa-mag-2vd.nc
+
+gdalwarp -t_srs EPSG:7844 -of netCDF -tr 0.01 0.01 -tap -cutline /workspace/DATA/RAW/zips/SA_STATE_POLYGON_shp.shp -cl SA_STATE_POLYGON_shp -crop_to_cutline -dstnodata 0.0 ../RAW/zips/SA_TMI_VRTP_ERS/SA_TMI_VRTP.ers sa-mag-rtp.nc
+
+gdalwarp -t_srs EPSG:7844 -of netCDF -tr 0.01 0.01 -tap -cutline /workspace/DATA/RAW/zips/SA_STATE_POLYGON_shp.shp -cl SA_STATE_POLYGON_shp -crop_to_cutline -dstnodata 0.0 ../RAW/zips/SA_GRAV_ERS/SA_GRAV.ers sa-grav.nc
+
+
+
+
+gdalwarp -t_srs EPSG:7844 -of netCDF -tr 0.01 0.01  -dstnodata 0.0 ../RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Ferric_oxide_content.ers aster-Ferric-cont.nc
+
+gdalwarp -t_srs EPSG:7844 -of netCDF -tr 0.01 0.01  -dstnodata 0.0 ../RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Ferrous_iron_content_in_MgOH.ers aster-Ferrous-cont.nc
+
+gdalwarp -t_srs EPSG:7844 -of netCDF -tr 0.01 0.01  -dstnodata 0.0 ../RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Ferrous_iron_index.ers aster-Ferrous-index.nc
+
+gdalwarp -t_srs EPSG:7844 -of netCDF -tr 0.01 0.01  -dstnodata 0.0 ../RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Green_vegetation.ers aster-green.nc
+
+gdalwarp -t_srs EPSG:7844 -of netCDF -tr 0.01 0.01  -dstnodata 0.0 ../RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Kaolin_group_index.ers aster-kaolin.nc
+
+gdalwarp -t_srs EPSG:7844 -of netCDF -tr 0.01 0.01  -dstnodata 0.0 ../RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_MgOH_group_composition.ers aster-MgOH-comp.nc
+
+gdalwarp -t_srs EPSG:7844 -of netCDF -tr 0.01 0.01  -dstnodata 0.0 ../RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_MgOH_group_content.ers aster-MgOH-cont.nc
+
+gdalwarp -t_srs EPSG:7844 -of netCDF -tr 0.01 0.01  -dstnodata 0.0 ../RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Opaque_index.ers aster-opaque.nc
+
+gdalwarp -t_srs EPSG:7844 -of netCDF -tr 0.01 0.01  -dstnodata 0.0 ../RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Regolith_B3_div_B7.ers aster-regolith-b3.nc
+
+gdalwarp -t_srs EPSG:7844 -of netCDF -tr 0.01 0.01  -dstnodata 0.0 ../RAW/zips/Unearthed_1_VNIR_SWIR_Geoscience_Products/BSQ/SA_ASTER_Regolith_B4_div_B7.ers aster-regolith-b4.nc
+
+	
