@@ -14,6 +14,6 @@ Use **results-sa-test2.py** to do the second part of the target test set generat
 
 ## Data
 
-Regularized data is in **"SA-DATA** folder.
+Regularized input data is in **SA-DATA** folder.
 
 Model output (exploration targeting maps) are in **MAPS**.
