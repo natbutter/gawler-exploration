@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# Used to run the poin-in-polygon co-registrations
+# Used to run the point-in-polygon co-registrations
 # as these can take a looong time (20 hours for 1,000,000 points)
 # Uses swifter to parallelise.
 #Run as final step to produce test/target data set.
@@ -36,12 +36,12 @@ def shapeExplore(point,shapes,recs,record):
 
 #Load in only the datasets we need.
 # #Categorised geology
-geolshape=shapefile.Reader("shapes/geology_simp.shp")
+geolshape=shapefile.Reader("SA-DATA/7MGeology/geology_simp.shp")
 
 recsGeol    = geolshape.records()
 shapesGeol  = geolshape.shapes()
 
-geolshape=shapefile.Reader("shapes/Archaean - Early Mesoproterozoic polygons.shp")
+geolshape=shapefile.Reader("SA-DATA/Archaean_Early_Mesoprterzoic_polygons_shp/Archaean - Early Mesoproterozoic polygons.shp")
 
 recsArch   = geolshape.records()
 shapesArch  = geolshape.shapes()

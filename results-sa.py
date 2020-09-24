@@ -120,7 +120,7 @@ def coregRaster(point,data,region):
 
 
 #Set the filename
-mineshape="/workspace/DATA/RAW/MinesMinerals/mines_and_mineral_occurrences_all.shp"
+mineshape="SA-DATA/MinesMinerals/mines_and_mineral_occurrences_all.shp"
 
 #read in the file
 shapeRead = shapefile.Reader(mineshape)
@@ -157,7 +157,7 @@ df
 
 
 #Get the gawler map boundary
-mineshape="/workspace/DATA/RAW/zips/Unearthed_5_GCAS_Boundary/GCAS_Boundary.shp"
+mineshape="SA-DATA/GCAS_Boundary/GCAS_Boundary.shp"
 
 #read in the file
 shapeRead = shapefile.Reader(mineshape)
@@ -181,7 +181,7 @@ yval = [x[1] for x in shapes[0].points]
 # In[9]:
 
 
-data_res=pd.read_csv("/workspace/DATA/RAW/Resistivity/AusLAMP_MT_Gawler.xyzr",
+data_res=pd.read_csv("SA-DATA/Resistivity/AusLAMP_MT_Gawler.xyzr",
                      sep='\s+',header=0,names=['lat','lon','depth','resistivity'])
 data_res.head()
 
@@ -222,7 +222,7 @@ latres=f[0,:,0]
 
 
 #Get fault data neo
-faultshape="/workspace/DATA/RAW/zips/Neoproterozoic - Ordovician faults_shp/Neoproterozoic - Ordovician faults.shp"
+faultshape="SA-DATA/Neoproterozoic - Ordovician faults_shp/Neoproterozoic - Ordovician faults.shp"
 shapeRead = shapefile.Reader(faultshape)
 shapes  = shapeRead.shapes()
 Nshp    = len(shapes)
@@ -238,7 +238,7 @@ faultsNeo=np.array(faultsNeo)
 
 
 #Get fault data archean
-faultshape="/workspace/DATA/RAW/zips/Archaean - Early Mesoproterozoic faults_shp/Archaean - Early Mesoproterozoic faults.shp"
+faultshape="SA-DATA/Archaean - Early Mesoproterozoic faults_shp/Archaean - Early Mesoproterozoic faults.shp"
 shapeRead = shapefile.Reader(faultshape)
 shapes  = shapeRead.shapes()
 Nshp    = len(shapes)
@@ -254,7 +254,7 @@ faultsArch=np.array(faultsArch)
 
 
 #Get fault data dolerite dykes swarms
-faultshape="/workspace/DATA/RAW/zips/Gairdner Dolerite_shp/Gairdner Dolerite.shp"
+faultshape="SA-DATA/Gairdner Dolerite_shp/Gairdner Dolerite.shp"
 shapeRead = shapefile.Reader(faultshape)
 shapes  = shapeRead.shapes()
 Nshp    = len(shapes)
@@ -289,40 +289,40 @@ def readnc(filename):
 # In[17]:
 
 
-x1,y1,z1 = readnc("../DATA/sa/aster-AlOH-cont.nc")
-x2,y2,z2 = readnc("../DATA/sa/aster-AlOH-comp.nc")
-x3,y3,z3 = readnc("../DATA/sa/aster-FeOH-cont.nc")
-x4,y4,z4 = readnc("../DATA/sa/aster-Ferric-cont.nc")
-x5,y5,z5 = readnc("../DATA/sa/aster-Ferrous-cont.nc")
-x6,y6,z6 = readnc("../DATA/sa/aster-Ferrous-index.nc")
-x7,y7,z7 = readnc("../DATA/sa/aster-MgOH-comp.nc")
-x8,y8,z8 = readnc("../DATA/sa/aster-MgOH-cont.nc")
-x9,y9,z9 = readnc("../DATA/sa/aster-green.nc")
-x10,y10,z10 = readnc("../DATA/sa/aster-kaolin.nc")
-x11,y11,z11 = readnc("../DATA/sa/aster-opaque.nc")
-x12,y12,z12 = readnc("../DATA/sa/aster-quartz.nc")
-x13,y13,z13 = readnc("../DATA/sa/aster-regolith-b3.nc")
-x14,y14,z14 = readnc("../DATA/sa/aster-regolith-b4.nc")
-x15,y15,z15 = readnc("../DATA/sa/aster-silica.nc")
-x16,y16,z16 = readnc("../DATA/sa/sa-base-elev.nc")
-x17,y17,z17 = readnc("../DATA/sa/sa-dem.nc")
-x18,y18,z18 = readnc("../DATA/sa/sa-base-dtb.nc")
-x19,y19,z19 = readnc("../DATA/sa/sa-mag-2vd.nc")
-x20,y20,z20 = readnc("../DATA/sa/sa-mag-rtp.nc")
-x21,y21,z21 = readnc("../DATA/sa/sa-mag-tmi.nc")
-x22,y22,z22 = readnc("../DATA/sa/sa-rad-dose.nc")
-x23,y23,z23 = readnc("../DATA/sa/sa-rad-k.nc")
-x24,y24,z24 = readnc("../DATA/sa/sa-rad-th.nc")
-x25,y25,z25 = readnc("../DATA/sa/sa-rad-u.nc")
-x26,y26,z26 = readnc("../DATA/sa/sa-grav.nc")
+x1,y1,z1 = readnc("SA-DATA/aster-AlOH-cont.nc")
+x2,y2,z2 = readnc("SA-DATA/aster-AlOH-comp.nc")
+x3,y3,z3 = readnc("SA-DATA/aster-FeOH-cont.nc")
+x4,y4,z4 = readnc("SA-DATA/aster-Ferric-cont.nc")
+x5,y5,z5 = readnc("SA-DATA/aster-Ferrous-cont.nc")
+x6,y6,z6 = readnc("SA-DATA/aster-Ferrous-index.nc")
+x7,y7,z7 = readnc("SA-DATA/aster-MgOH-comp.nc")
+x8,y8,z8 = readnc("SA-DATA/aster-MgOH-cont.nc")
+x9,y9,z9 = readnc("SA-DATA/aster-green.nc")
+x10,y10,z10 = readnc("SA-DATA/aster-kaolin.nc")
+x11,y11,z11 = readnc("SA-DATA/aster-opaque.nc")
+x12,y12,z12 = readnc("SA-DATA/aster-quartz.nc")
+x13,y13,z13 = readnc("SA-DATA/aster-regolith-b3.nc")
+x14,y14,z14 = readnc("SA-DATA/aster-regolith-b4.nc")
+x15,y15,z15 = readnc("SA-DATA/aster-silica.nc")
+x16,y16,z16 = readnc("SA-DATA/sa-base-elev.nc")
+x17,y17,z17 = readnc("SA-DATA/sa-dem.nc")
+x18,y18,z18 = readnc("SA-DATA/sa-base-dtb.nc")
+x19,y19,z19 = readnc("SA-DATA/sa-mag-2vd.nc")
+x20,y20,z20 = readnc("SA-DATA/sa-mag-rtp.nc")
+x21,y21,z21 = readnc("SA-DATA/sa-mag-tmi.nc")
+x22,y22,z22 = readnc("SA-DATA/sa-rad-dose.nc")
+x23,y23,z23 = readnc("SA-DATA/sa-rad-k.nc")
+x24,y24,z24 = readnc("SA-DATA/sa-rad-th.nc")
+x25,y25,z25 = readnc("SA-DATA/sa-rad-u.nc")
+x26,y26,z26 = readnc("SA-DATA/sa-grav.nc")
 
 
 # In[19]:
 
 
 #Categorised geology
-x27,y27,z27 = readnc("../DATA/sa/sa-geo-archean.nc")
-x28,y28,z28 = readnc("../DATA/sa/sa-geol1.nc")
+x27,y27,z27 = readnc("SA-DATA/sa-geo-archean.nc")
+x28,y28,z28 = readnc("SA-DATA/sa-geol1.nc")
 
 
 # # Part 2 - Spatial data mining of datasets

@@ -119,7 +119,7 @@ def grid(x, y, z, resX=100, resY=100):
 # ### Load in Deposit locations - mine and mineral occurances
 
 #Set the filename
-mineshape="shapes/mines_and_mineral_occurrences_all.shp"
+mineshape="SA-DATA/MinesMinerals/mines_and_mineral_occurrences_all.shp"
 
 #Set shapefile attributes and assign
 sf = shapefile.Reader(mineshape)
@@ -131,7 +131,7 @@ shps = [s.points for s in sf.shapes()]
 df = pd.DataFrame(columns=fields, data=records)
 
 #Get the gawler map boundary
-mineshape="shapes/GCAS_Boundary.shp"
+mineshape="SA-DATA/GCAS_Boundary/GCAS_Boundary.shp"
 
 #read in the file
 shapeRead = shapefile.Reader(mineshape)
@@ -153,7 +153,7 @@ commsig=comm[comm.SIZE_VAL!="Low Significance"]
 # Here we load in the pre-formatted datasets and prepare them for further manipulations. 
 
 # ## Resistivity
-data_res=pd.read_csv("sa/AusLAMP_MT_Gawler.xyzr",
+data_res=pd.read_csv("SA-DATA/AusLAMP_MT_Gawler.xyzr",
                      sep='\s+',header=0,names=['lat','lon','depth','resistivity'])
 
 lon_res=data_res.lon.values
@@ -178,7 +178,7 @@ latres=f[0,:,0]
 # ## Faults and dykes
 
 #Get fault data neo
-faultshape="shapes/Neoproterozoic - Ordovician faults.shp"
+faultshape="SA-DATA/Neoproterozoic - Ordovician faults_shp/Neoproterozoic - Ordovician faults.shp"
 shapeRead = shapefile.Reader(faultshape)
 shapes  = shapeRead.shapes()
 Nshp    = len(shapes)
@@ -190,7 +190,7 @@ for i in range(0,Nshp):
 faultsNeo=np.array(faultsNeo)
 
 #Get fault data archean
-faultshape="shapes/Archaean - Early Mesoproterozoic faults.shp"
+faultshape="SA-DATA/Archaean - Early Mesoproterozoic faults_shp/Archaean - Early Mesoproterozoic faults.shp"
 shapeRead = shapefile.Reader(faultshape)
 shapes  = shapeRead.shapes()
 Nshp    = len(shapes)
@@ -202,7 +202,7 @@ for i in range(0,Nshp):
 faultsArch=np.array(faultsArch)
 
 #Get fault data dolerite dykes swarms
-faultshape="shapes/Gairdner Dolerite.shp"
+faultshape="SA-DATA/Gairdner Dolerite_shp/Gairdner Dolerite.shp"
 shapeRead = shapefile.Reader(faultshape)
 shapes  = shapeRead.shapes()
 Nshp    = len(shapes)
@@ -231,32 +231,32 @@ def readnc(filename):
     return(xdata,ydata,zdata)
 
 #Load in the grids
-x1,y1,z1 = readnc("sa/aster-AlOH-cont.nc")
-x2,y2,z2 = readnc("sa/aster-AlOH-comp.nc")
-x3,y3,z3 = readnc("sa/aster-FeOH-cont.nc")
-x4,y4,z4 = readnc("sa/aster-Ferric-cont.nc")
-x5,y5,z5 = readnc("sa/aster-Ferrous-cont.nc")
-x6,y6,z6 = readnc("sa/aster-Ferrous-index.nc")
-x7,y7,z7 = readnc("sa/aster-MgOH-comp.nc")
-x8,y8,z8 = readnc("sa/aster-MgOH-cont.nc")
-x9,y9,z9 = readnc("sa/aster-green.nc")
-x10,y10,z10 = readnc("sa/aster-kaolin.nc")
-x11,y11,z11 = readnc("sa/aster-opaque.nc")
-x12,y12,z12 = readnc("sa/aster-quartz.nc")
-x13,y13,z13 = readnc("sa/aster-regolith-b3.nc")
-x14,y14,z14 = readnc("sa/aster-regolith-b4.nc")
-x15,y15,z15 = readnc("sa/aster-silica.nc")
-x16,y16,z16 = readnc("sa/sa-base-elev.nc")
-x17,y17,z17 = readnc("sa/sa-dem.nc")
-x18,y18,z18 = readnc("sa/sa-base-dtb.nc")
-x19,y19,z19 = readnc("sa/sa-mag-2vd.nc")
-x20,y20,z20 = readnc("sa/sa-mag-rtp.nc")
-x21,y21,z21 = readnc("sa/sa-mag-tmi.nc")
-x22,y22,z22 = readnc("sa/sa-rad-dose.nc")
-x23,y23,z23 = readnc("sa/sa-rad-k.nc")
-x24,y24,z24 = readnc("sa/sa-rad-th.nc")
-x25,y25,z25 = readnc("sa/sa-rad-u.nc")
-x26,y26,z26 = readnc("sa/sa-grav.nc")
+x1,y1,z1 = readnc("SA-DATA/aster-AlOH-cont.nc")
+x2,y2,z2 = readnc("SA-DATA/aster-AlOH-comp.nc")
+x3,y3,z3 = readnc("SA-DATA/aster-FeOH-cont.nc")
+x4,y4,z4 = readnc("SA-DATA/aster-Ferric-cont.nc")
+x5,y5,z5 = readnc("SA-DATA/aster-Ferrous-cont.nc")
+x6,y6,z6 = readnc("SA-DATA/aster-Ferrous-index.nc")
+x7,y7,z7 = readnc("SA-DATA/aster-MgOH-comp.nc")
+x8,y8,z8 = readnc("SA-DATA/aster-MgOH-cont.nc")
+x9,y9,z9 = readnc("SA-DATA/aster-green.nc")
+x10,y10,z10 = readnc("SA-DATA/aster-kaolin.nc")
+x11,y11,z11 = readnc("SA-DATA/aster-opaque.nc")
+x12,y12,z12 = readnc("SA-DATA/aster-quartz.nc")
+x13,y13,z13 = readnc("SA-DATA/aster-regolith-b3.nc")
+x14,y14,z14 = readnc("SA-DATA/aster-regolith-b4.nc")
+x15,y15,z15 = readnc("SA-DATA/aster-silica.nc")
+x16,y16,z16 = readnc("SA-DATA/sa-base-elev.nc")
+x17,y17,z17 = readnc("SA-DATA/sa-dem.nc")
+x18,y18,z18 = readnc("SA-DATA/sa-base-dtb.nc")
+x19,y19,z19 = readnc("SA-DATA/sa-mag-2vd.nc")
+x20,y20,z20 = readnc("SA-DATA/sa-mag-rtp.nc")
+x21,y21,z21 = readnc("SA-DATA/sa-mag-tmi.nc")
+x22,y22,z22 = readnc("SA-DATA/sa-rad-dose.nc")
+x23,y23,z23 = readnc("SA-DATA/sa-rad-k.nc")
+x24,y24,z24 = readnc("SA-DATA/sa-rad-th.nc")
+x25,y25,z25 = readnc("SA-DATA/sa-rad-u.nc")
+x26,y26,z26 = readnc("SA-DATA/sa-grav.nc")
 
 
 #Define a function to find points in polygons
@@ -273,12 +273,12 @@ def shapeExplore(point,shapes,recs,record):
     return(-9999.)
 
 # #Categorised geology
-geolshape=shapefile.Reader("shapes/geology_simp.shp")
+geolshape=shapefile.Reader("SA-DATA/7MGeology/geology_simp.shp")
 
 recsGeol    = geolshape.records()
 shapesGeol  = geolshape.shapes()
 
-geolshape=shapefile.Reader("shapes/Archaean - Early Mesoproterozoic polygons.shp")
+geolshape=shapefile.Reader("SA-DATA/Archaean_Early_Mesoprterzoic_polygons_shp/Archaean - Early Mesoproterozoic polygons.shp")
 
 recsArch   = geolshape.records()
 shapesArch  = geolshape.shapes()
@@ -400,7 +400,7 @@ categorical_features=[
 
 
 # #Generate "non-deposit points on land (or in the gawler) for sa"
-polgonshape=shapefile.Reader("shapes/SA_STATE_POLYGON_shp.shp")
+polgonshape=shapefile.Reader("SA-DATA/SA/SA_STATE_POLYGON_shp.shp")
 # #polgonshape=shapefile.Reader("/workspace/DATA/RAW/zips/Unearthed_5_GCAS_Boundary/GCAS_Boundary.shp")
 
 shapesPoly  = polgonshape.shapes()
