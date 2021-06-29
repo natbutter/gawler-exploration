@@ -1,5 +1,6 @@
 # Code for Butterworth and Barnett-Moore 2020
 Spatial data mining with machine learning to reveal mineral exploration targets under cover in the Gawler Craton, South Australia.
+The pre-print manuscript is availble in the "GAWLER" directory.
 
 ## Code
 Use Mines and Minerals dataset to teach the model values from the datasets that are associated with mines and known deposit locations. Then apply that trained algorithm on the entire area.
