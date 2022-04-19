@@ -20,3 +20,5 @@ Regularized input data is in **SA-DATA** folder.
 Model output (exploration targeting maps) are in **MAPS**.
 
 Model training and target datasets generated in **ML-DATA**.
+
+References and links to original data licenses can be found in the manuscript.
